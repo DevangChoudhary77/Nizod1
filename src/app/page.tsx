@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Globe, Smartphone, PenTool, ChevronRight, Search, Briefcase, Users, Megaphone, Home as HomeIcon, User, FileText, Phone, X } from "lucide-react";
+import { ArrowRight, Globe, Smartphone, PenTool, Briefcase, Users, Megaphone, Home as HomeIcon, User, FileText, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { ScrollProgress, TextRevealByWord, ScrollLinkedRevealGroup } from "@/components/ScrollEffects";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
@@ -614,7 +614,7 @@ export default function Home() {
                     </h4>
 
                     <p className="text-sm text-slate-300 mb-6 line-clamp-4 leading-relaxed tracking-wide shadow-sm">
-                      As an art student, AI Image Generator has been an invaluable resource for my projects. It's not just about convenience; it's about the endless creative possibilities it offers.
+                      As an art student, AI Image Generator has been an invaluable resource for my projects. It&apos;s not just about convenience; it&apos;s about the endless creative possibilities it offers.
                     </p>
 
                     <button className="bg-white/20 backdrop-blur-md border border-white/30 text-white w-full py-3.5 px-6 rounded-full flex justify-between items-center text-sm font-bold tracking-wide hover:bg-white/30 transition shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
