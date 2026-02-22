@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Globe, Smartphone, PenTool, ChevronRight, Search, Play, Star, X, Briefcase, Users, Megaphone, Home as HomeIcon, User, FileText, Phone, Mountain } from "lucide-react";
+import { ArrowRight, Globe, Smartphone, PenTool, ChevronRight, Search, Briefcase, Users, Megaphone, Home as HomeIcon, User, FileText, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { ScrollProgress, TextRevealByWord, ScrollLinkedRevealGroup } from "@/components/ScrollEffects";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
@@ -137,7 +137,7 @@ export default function Home() {
                     : modalTitle === 'Service: Website Development' ? "From corporate landing pages to complex e-commerce platforms, we build robust, high-performance web applications tailored to your business goals. We utilize modern stacks like React, Next.js, and Node.js to ensure lightning-fast speeds and secure architecture."
                       : modalTitle === 'Service: App Development' ? "We architect native and cross-platform mobile experiences that captivate users. Whether it's iOS or Android, our apps are built for performance, seamless UX, and offline capabilities, keeping your audience engaged on the go."
                         : modalTitle === 'Service: UI/UX Design' ? "Great software starts with great design. Our UX research and UI design team crafts intuitive, accessible, and stunning interfaces that reduce friction and increase user adoption, ensuring your product is a joy to use."
-                          : modalTitle === 'Service: Project Management' ? "We take the chaos out of software delivery. Our agile project managers act as your dedicated liaison, maintaining strict timelines, transparent budget tracking, and continuous communication so you always know your project's state."
+                          : modalTitle === 'Service: Project Management' ? "We take the chaos out of software delivery. Our agile project managers act as your dedicated liaison, maintaining strict timelines, transparent budget tracking, and continuous communication so you always know your project&apos;s state."
                             : modalTitle === 'Service: HR Management' ? "Scaling top-tier tech talent is challenging. Our specialized technical HR solutions cover precise talent acquisition, cultural alignment, and rapid onboarding processes to build elite engineering teams for your enterprise."
                               : modalTitle.includes('Blog Post')
                                 ? "Dive into our latest insights and industry trends. Our experts share actionable strategies, technical deep-dives, and thought leadership to keep you ahead of the digital curve."
@@ -344,7 +344,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-white">{service.title}</h3>
                 <p className="text-slate-300 mb-2 leading-relaxed font-light text-[0.95rem]">{service.desc}</p>
-                <p className="text-slate-300 leading-relaxed font-light text-[0.95rem]">Whether you're into classic frameworks.</p>
+                <p className="text-slate-300 leading-relaxed font-light text-[0.95rem]">Whether you&apos;re into classic frameworks.</p>
               </div>
             ))}
           </ScrollLinkedRevealGroup>
