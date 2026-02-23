@@ -32,7 +32,7 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
         <span className="relative mx-1 lg:mx-2.5">
             <span className="absolute opacity-20 text-slate-800">{children}</span>
             <motion.span
-                style={{ opacity: opacity }}
+                style={{ opacity: opacity, willChange: "opacity" }}
                 className="text-slate-900 drop-shadow-sm"
             >
                 {children}
@@ -55,7 +55,7 @@ export const TextRevealByWord: FC<{ text: string; className?: string }> = ({
     const words = text.split(" ");
 
     return (
-        <div ref={targetRef} className={`relative z-0 h-[150vh] ${className || ""}`}>
+        <div ref={targetRef} className={`relative z-0 h-[100vh] ${className || ""}`}>
             <div className="sticky top-0 mx-auto flex h-screen max-w-6xl items-center justify-center bg-transparent px-[1rem] py-[2rem]">
                 <p className="flex flex-wrap p-5 text-4xl font-bold text-slate-800/20 md:p-8 md:text-5xl lg:p-10 lg:text-6xl xl:text-7xl font-display leading-tight tracking-tight text-center justify-center">
                     {words.map((word, i) => {
@@ -84,7 +84,7 @@ export const ParallaxSection: FC<{ children: ReactNode; speed?: number; classNam
 
     return (
         <div ref={ref} className={`relative ${className || ""}`}>
-            <motion.div style={{ y }}>
+            <motion.div style={{ y, willChange: "transform" }}>
                 {children}
             </motion.div>
         </div>
@@ -95,7 +95,7 @@ export const ScrollLinkedRevealGroup = ({ children, className }: { children: Rea
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["0 0.9", "0 0.3"], // Maps 0 to when top hits 90% viewport, 1 to when top hits 30% viewport
+        offset: ["0 1", "0 0.3"], // Maps 0 to when top hits viewport, 1 to when top hits 30% viewport
     });
 
     const count = React.Children.count(children);
@@ -121,7 +121,7 @@ const ScrollLinkedRevealCard = ({ children, progress, start, end }: { children: 
     const scale = useTransform(progress, [start, end], [0.8, 1]);
 
     return (
-        <motion.div style={{ opacity, y, scale }} className="h-full">
+        <motion.div style={{ opacity, y, scale, willChange: "opacity, transform" }} className="h-full">
             {children}
         </motion.div>
     );

@@ -102,11 +102,11 @@ export default function Home() {
     <main className="w-full font-sans text-slate-900 bg-slate-50/50 selection:bg-blue-600/30 relative overflow-x-hidden">
       <NavBar items={navItems} />
       <ScrollProgress className="bg-blue-600" />
-      {/* Global Minimal Liquid Glass Blobs */}
+      {/* Global Minimal Liquid Glass Blobs - Hardware Accelerated */}
       <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden opacity-60">
-        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-300/30 blur-[140px]" />
-        <div className="absolute top-[30%] right-[-10%] w-[45vw] h-[45vw] rounded-full bg-purple-300/20 blur-[130px]" />
-        <div className="absolute bottom-[-20%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-cyan-300/20 blur-[120px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-300/30 blur-[140px] will-change-transform transform-gpu" />
+        <div className="absolute top-[30%] right-[-10%] w-[45vw] h-[45vw] rounded-full bg-purple-300/20 blur-[130px] will-change-transform transform-gpu" />
+        <div className="absolute bottom-[-20%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-cyan-300/20 blur-[120px] will-change-transform transform-gpu" />
       </div>
 
       {/* Interactive Modal */}
@@ -154,7 +154,7 @@ export default function Home() {
 
 
       {/* Navigation Header */}
-      <header className="w-full px-6 md:px-24 py-5 flex items-center justify-between bg-white/40 backdrop-blur-2xl border-b border-white/40 z-50 sticky top-0 shadow-sm">
+      <header className="absolute top-0 w-full px-6 md:px-24 py-5 flex items-center justify-between bg-transparent z-50">
         <div className="text-2xl font-display font-bold flex items-center gap-2">
           <span className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-black">N</span>
           Nizod
@@ -384,7 +384,7 @@ export default function Home() {
               <div className="w-full lg:w-1/2">
                 <div className="w-full aspect-[4/3] bg-slate-200 rounded-[2rem] relative overflow-hidden shadow-inner border border-gray-200">
                   <div className="absolute inset-0 bg-slate-300">
-                    <Image fill src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80" alt="Team collaborating" className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                    <Image fill src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80" alt="Team collaborating" className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" decoding="async" />
                   </div>
                 </div>
               </div>
