@@ -270,6 +270,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Zigzag Section */}
+      <section className="py-24 px-6 md:px-24 bg-white/40 backdrop-blur-2xl border-y border-white/50 relative">
+        <div className="max-w-6xl mx-auto flex flex-col gap-24 relative z-10">
+          {/* Stat 1: 120+ Projects */}
+          <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+            <div className="w-full md:w-1/2 aspect-video md:aspect-[4/3] bg-white/60 backdrop-blur-md rounded-[2.5rem] flex items-center justify-center text-slate-500 shadow-xl border border-white/80 overflow-hidden relative group">
+              <Image fill src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80" alt="Projects" className="object-cover group-hover:scale-105 transition duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3 className="text-6xl md:text-[5rem] font-display font-bold text-navy-900 mb-4 tracking-tight drop-shadow-sm">120+</h3>
+              <p className="text-3xl font-display text-blue-600 font-bold">Projects</p>
+            </div>
+          </div>
+
+          {/* Stat 2: 80+ Clients */}
+          <div className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24">
+            <div className="w-full md:w-1/2 aspect-video md:aspect-[4/3] bg-white/60 backdrop-blur-md rounded-[2.5rem] flex items-center justify-center text-slate-500 shadow-xl border border-white/80 overflow-hidden relative group">
+              <Image fill src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80" alt="Clients" className="object-cover group-hover:scale-105 transition duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div className="w-full md:w-1/2 text-left md:text-right">
+              <h3 className="text-6xl md:text-[5rem] font-display font-bold text-navy-900 mb-4 tracking-tight drop-shadow-sm">80+</h3>
+              <p className="text-3xl font-display text-blue-600 font-bold">Clients</p>
+            </div>
+          </div>
+
+          {/* Stat 3: 25+ Employees */}
+          <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+            <div className="w-full md:w-1/2 aspect-video md:aspect-[4/3] bg-white/60 backdrop-blur-md rounded-[2.5rem] flex items-center justify-center text-slate-500 shadow-xl border border-white/80 overflow-hidden relative group">
+              <Image fill src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" alt="Employees" className="object-cover group-hover:scale-105 transition duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3 className="text-6xl md:text-[5rem] font-display font-bold text-navy-900 mb-4 tracking-tight drop-shadow-sm">25+</h3>
+              <p className="text-3xl font-display text-blue-600 font-bold">Employees</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
             {/* Interactive Services Bento Grid */}
       <section id="services" className="py-32 px-6 md:px-24 bg-surface-50 relative overflow-hidden">
         {/* Subtle Background Glows matching the cards */}
@@ -372,44 +410,6 @@ export default function Home() {
                 </motion.div>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Zigzag Section */}
-      <section className="py-24 px-6 md:px-24 bg-white/40 backdrop-blur-2xl border-y border-white/50 relative">
-        <div className="max-w-6xl mx-auto flex flex-col gap-24 relative z-10">
-          {/* Stat 1: 120+ Projects */}
-          <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
-            <div className="w-full md:w-1/2 aspect-video md:aspect-[4/3] bg-white/60 backdrop-blur-md rounded-[2.5rem] flex items-center justify-center text-slate-500 shadow-xl border border-white/80 overflow-hidden relative group">
-              <Image fill src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80" alt="Projects" className="object-cover group-hover:scale-105 transition duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
-            </div>
-            <div className="w-full md:w-1/2">
-              <h3 className="text-6xl md:text-[5rem] font-display font-bold text-navy-900 mb-4 tracking-tight drop-shadow-sm">120+</h3>
-              <p className="text-3xl font-display text-blue-600 font-bold">Projects</p>
-            </div>
-          </div>
-
-          {/* Stat 2: 80+ Clients */}
-          <div className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24">
-            <div className="w-full md:w-1/2 aspect-video md:aspect-[4/3] bg-white/60 backdrop-blur-md rounded-[2.5rem] flex items-center justify-center text-slate-500 shadow-xl border border-white/80 overflow-hidden relative group">
-              <Image fill src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80" alt="Clients" className="object-cover group-hover:scale-105 transition duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
-            </div>
-            <div className="w-full md:w-1/2 text-left md:text-right">
-              <h3 className="text-6xl md:text-[5rem] font-display font-bold text-navy-900 mb-4 tracking-tight drop-shadow-sm">80+</h3>
-              <p className="text-3xl font-display text-blue-600 font-bold">Clients</p>
-            </div>
-          </div>
-
-          {/* Stat 3: 25+ Employees */}
-          <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
-            <div className="w-full md:w-1/2 aspect-video md:aspect-[4/3] bg-white/60 backdrop-blur-md rounded-[2.5rem] flex items-center justify-center text-slate-500 shadow-xl border border-white/80 overflow-hidden relative group">
-              <Image fill src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" alt="Employees" className="object-cover group-hover:scale-105 transition duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
-            </div>
-            <div className="w-full md:w-1/2">
-              <h3 className="text-6xl md:text-[5rem] font-display font-bold text-navy-900 mb-4 tracking-tight drop-shadow-sm">25+</h3>
-              <p className="text-3xl font-display text-blue-600 font-bold">Employees</p>
-            </div>
           </div>
         </div>
       </section>
