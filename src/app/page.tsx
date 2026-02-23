@@ -211,7 +211,15 @@ export default function Home() {
       </section>
 
       {/* Timeline / About Section */}
-      <section className="py-32 px-6 md:px-24 max-w-7xl mx-auto relative z-10">
+      <section className="py-32 px-6 md:px-24 max-w-7xl mx-auto relative z-10 overflow-hidden">
+
+        {/* Subtle Cyber Diamond Vibe - Top Left */}
+        <div className="absolute -top-32 -left-20 w-64 h-96 z-[-1] opacity-20 blur-3xl pointer-events-none transform -rotate-12">
+          <div className="w-full h-full relative">
+            <div className="w-0 h-0 border-l-[80px] border-l-transparent border-r-[80px] border-r-transparent border-b-[120px] border-b-blue-600 absolute top-0" />
+            <div className="w-0 h-0 border-l-[80px] border-l-transparent border-r-[80px] border-r-transparent border-t-[120px] border-t-purple-500 absolute bottom-0" />
+          </div>
+        </div>
         <div className="flex flex-col lg:flex-row gap-24 lg:gap-32 items-center">
           <div className="w-full lg:w-1/2">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6 border-b-4 border-blue-600 inline-block pb-2 tracking-tight">Lorem Ipsum is simply</h2>
@@ -305,7 +313,14 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-32 px-6 md:px-24 bg-white">
+      <section id="portfolio" className="py-32 px-6 md:px-24 bg-white relative overflow-hidden">
+
+        {/* Subtle Cylinder Vibe - Bottom Right */}
+        <div className="absolute -bottom-40 -right-20 w-80 h-96 z-[-1] opacity-20 text-opacity-10 pointer-events-none blur-3xl">
+          <div className="w-full h-full relative" style={{ perspective: '800px' }}>
+            <div className="absolute inset-0 rounded-full border-[30px] border-blue-600 bg-gradient-to-tr from-cyan-400 via-blue-600 to-indigo-900 transform rotate-45 skew-x-12" />
+          </div>
+        </div>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-10">Portfolio</h2>
