@@ -108,7 +108,6 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-
       {/* Navigation Header */}
       <header className="w-full px-6 md:px-24 py-5 flex items-center justify-between bg-white/40 backdrop-blur-2xl border-b border-white/40 z-50 sticky top-0 shadow-sm">
         <div className="text-2xl font-display font-bold flex items-center gap-2">
@@ -307,7 +306,7 @@ export default function Home() {
         </div>
       </section>
 
-            {/* Interactive Services Bento Grid */}
+      {/* Interactive Services Bento Grid */}
       <section id="services" className="py-32 px-6 md:px-24 bg-surface-50 relative overflow-hidden">
         {/* Subtle Background Glows matching the cards */}
         <div className="absolute top-10 left-[-10%] w-[40vw] h-[40vw] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none will-change-transform transform-gpu" />
@@ -315,7 +314,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 relative z-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -323,7 +322,7 @@ export default function Home() {
             >
               What We Do
             </motion.h2>
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -332,7 +331,7 @@ export default function Home() {
             >
               Premium Digital Solutions
             </motion.h3>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -342,7 +341,7 @@ export default function Home() {
               We engineer scalable systems, highly playable interfaces, and stunning digital experiences tailored to accelerate enterprise growth.
             </motion.p>
           </div>
-          
+
           <div className="relative z-10">
             <InteractiveServicesGrid openModal={openModal} />
           </div>
@@ -352,12 +351,7 @@ export default function Home() {
       {/* Portfolio Section */}
       <section id="portfolio" className="py-32 px-6 md:px-24 bg-white relative overflow-hidden">
 
-        {/* Subtle Cylinder Vibe - Bottom Right */}
-        <div className="absolute -bottom-40 -right-20 w-80 h-96 z-[-1] opacity-20 text-opacity-10 pointer-events-none blur-3xl">
-          <div className="w-full h-full relative" style={{ perspective: '800px' }}>
-            <div className="absolute inset-0 rounded-full border-[30px] border-blue-600 bg-gradient-to-tr from-cyan-400 via-blue-600 to-indigo-900 transform rotate-45 skew-x-12" />
-          </div>
-        </div>
+
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-10">Portfolio</h2>
@@ -375,40 +369,43 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioItems.map((item, i) => {
-              if (activePortfolioCategory !== 'All' && item.category !== activePortfolioCategory) return null;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
-                  className="rounded-[2rem] overflow-hidden shadow-xl transition duration-500 group cursor-pointer relative h-[500px] border border-white/10"
-                  onClick={() => openModal(`Case Study: ${item.caseStudy}`)}
-                >
-                  <div className="absolute inset-0 bg-slate-800 z-0">
-                    <Image fill src={`https://images.unsplash.com/photo-${item.img}?auto=format&fit=crop&q=80`} alt={item.title} className="object-cover group-hover:scale-110 transition duration-700" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" />
-                  </div>
+            <AnimatePresence mode="popLayout">
+              {portfolioItems.map((item) => {
+                if (activePortfolioCategory !== 'All' && item.category !== activePortfolioCategory) return null;
+                return (
+                  <motion.div
+                    layout
+                    key={item.title}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                    className="rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 group cursor-pointer relative h-[450px] border border-slate-200"
+                    onClick={() => openModal(`Case Study: ${item.caseStudy}`)}
+                  >
+                    <div className="absolute inset-0 bg-slate-200 z-0">
+                      <Image fill src={`https://images.unsplash.com/photo-${item.img}?auto=format&fit=crop&q=80`} alt={item.title} className="object-cover group-hover:scale-105 transition duration-700" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+                    </div>
 
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
-                  {/* Content Overlaid on Image */}
-                  <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
-                    <p className="text-sm text-blue-400 mb-3 font-bold uppercase tracking-widest shadow-sm">{item.category}</p>
-                    <h4 className="font-bold text-white text-3xl mb-6 shadow-sm tracking-tight leading-tight">
-                      {item.title}
-                    </h4>
+                    {/* Content Overlaid on Image */}
+                    <div className="absolute inset-x-8 bottom-8 flex flex-col justify-end z-20">
+                      <p className="text-sm text-blue-400 mb-2 font-bold uppercase tracking-widest shadow-sm">{item.category}</p>
+                      <h4 className="font-bold text-white text-2xl md:text-3xl mb-6 shadow-sm tracking-tight leading-tight">
+                        {item.title}
+                      </h4>
 
-                    <button className="bg-white/20 backdrop-blur-md border border-white/30 text-white w-full py-3.5 px-6 rounded-full flex justify-between items-center text-sm font-bold tracking-wide hover:bg-white/30 transition shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
-                      View Case Study
-                      <ArrowRight className="w-5 h-5 -rotate-45" />
-                    </button>
-                  </div>
-                </motion.div>
-              )
-            })}
+                      <button className="bg-[#4D4D4D]/90 backdrop-blur-md border border-white/20 text-white w-fit py-3 px-6 rounded-full flex items-center justify-between gap-3 text-sm font-bold tracking-wide hover:bg-[#5a5a5a] transition shadow-lg">
+                        View Case Study
+                        <ArrowRight className="w-4 h-4 -rotate-45" />
+                      </button>
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </AnimatePresence>
           </div>
         </div>
       </section>
