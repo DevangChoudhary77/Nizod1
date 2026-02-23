@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Briefcase, Home as HomeIcon, User, FileText, Phone, X } from "lucide-react";
+import { ArrowRight, Briefcase, Home as HomeIcon, User, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { ScrollProgress, TextRevealByWord } from "@/components/ScrollEffects";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
@@ -51,7 +51,6 @@ export default function Home() {
     { name: 'Home', url: '#home', icon: HomeIcon },
     { name: 'Services', url: '#services', icon: Briefcase },
     { name: 'Portfolio', url: '#portfolio', icon: User },
-    { name: 'Blog', url: '#blogs', icon: FileText },
     { name: 'Contact', url: '#contact', icon: Phone }
   ];
 
@@ -457,64 +456,6 @@ export default function Home() {
                 </motion.div>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Blogs Section */}
-      <section id="blogs">
-        {/* Blue Header */}
-        <div className="bg-blue-600 py-16 px-6 relative flex flex-col items-center justify-center text-white overflow-hidden">
-          <div className="absolute inset-0 opacity-10 flex space-x-8 w-full justify-center">
-            <div className="w-96 h-[200%] bg-white skew-x-[35deg] -translate-x-64 -translate-y-20" />
-            <div className="w-48 h-[200%] bg-white skew-x-[35deg] -translate-x-20 -translate-y-20" />
-          </div>
-
-          <div className="relative z-10 text-center w-full max-w-2xl border-b border-white/20 pb-6 inline-block mx-auto">
-            <h2 className="text-5xl md:text-6xl font-display font-bold">Our Blogs</h2>
-          </div>
-        </div>
-
-        {/* Blogs Grid */}
-        <div className="bg-surface-50 py-16 px-6 md:px-24 border-t border-gray-100">
-          <div className="max-w-7xl mx-auto">
-            <h3 className="text-3xl font-display font-bold text-slate-900 mb-8">Popular blogs</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="rounded-3xl overflow-hidden shadow-xl transition duration-500 group cursor-pointer relative h-[500px] border border-white/10"
-                  onClick={() => openModal(`Blog Post: Course Promotion Setup ${item}`)}
-                >
-                  <div className="absolute inset-0 bg-slate-800 z-0">
-                    <Image fill src={`https://images.unsplash.com/photo-${['1432888498266-38ffec3eaf0a', '1555421689-491a97ff2040', '1517694712202-14dd9538aa97', '1499951360447-b19be8fe80f5', '1504868584819-f8e8b4b6d7e3', '1516321318423-f06f85e504b3', '1523240795612-9a054b0db644', '1451187580459-43490279c0fa'][i]}?auto=format&fit=crop&q=80`} alt="Blog thumbnail" className="object-cover group-hover:scale-110 transition duration-700" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw" />
-                  </div>
-
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-
-                  {/* Content Overlaid on Image */}
-                  <div className="absolute inset-0 z-20 p-6 flex flex-col justify-end">
-                    <h4 className="font-bold text-white text-xl mb-3 shadow-sm line-clamp-2">
-                      {i % 2 === 0 ? "Course Promotion" : "Maria Rodriguez - Art Student"}
-                    </h4>
-
-                    <p className="text-sm text-slate-300 mb-6 line-clamp-4 leading-relaxed tracking-wide shadow-sm">
-                      As an art student, AI Image Generator has been an invaluable resource for my projects. It&apos;s not just about convenience; it&apos;s about the endless creative possibilities it offers.
-                    </p>
-
-                    <button className="bg-white/20 backdrop-blur-md border border-white/30 text-white w-full py-3.5 px-6 rounded-full flex justify-between items-center text-sm font-bold tracking-wide hover:bg-white/30 transition shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
-                      Details
-                      <ArrowRight className="w-4 h-4 -rotate-45" />
-                    </button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
